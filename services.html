@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Services - Kelly Bootstrap Template</title>
+  <title>日常興趣</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -17,6 +17,9 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+  <!-- 引進台灣開源免費「jf open 粉圓體」字體連結 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-jianshe-openhunyuan@1.0.0/css/font-jianshe-openhunyuan.min.css">
+
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -27,13 +30,139 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Kelly
-  * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- 客製化風格與滑鼠懸停變色 CSS -->
+  <style>
+    /* 全網頁所有標題、內文一律套用「粉圓體」 */
+    body, h1, h2, h3, h4, h5, h6, p, span, a, input, textarea, button, .sitename, .navmenu a, .title-custom, .description-custom {
+      font-family: 'jf-openhunyuan', "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif !important;
+    }
+
+    /* 上方導覽列字體與顏色完全同步 */
+    .navmenu a, .navmenu a:focus {
+      color: #54493b !important;
+      font-weight: 600 !important;
+      position: relative;
+    }
+
+    .navmenu a:hover, .navmenu .active, .navmenu .active:focus {
+      color: #7a4f2d !important;
+    }
+
+    /* 導覽列圓潤底線膠囊置中 */
+    .navmenu a:before {
+      content: "";
+      position: absolute;
+      background-color: #7a4f2d !important; 
+      height: 4px !important; 
+      width: 60% !important; 
+      border-radius: 50px !important; 
+      bottom: -6px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+    }
+
+    /* 右上角社群連結改為咖啡色 */
+    .header-social-links a {
+      color: #7a4f2d !important;
+    }
+
+    /* 拔除厚重方框背景，改為極簡質感的無邊框日雜排版，並加上過渡動畫 */
+    .service-item-custom {
+      background: transparent !important;
+      padding: 50px 35px; 
+      height: 100%;
+      border-radius: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+      position: relative;
+      cursor: pointer;
+      /* 讓所有子元素的變色與位移過程在 0.3 秒內平滑發生 */
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* 手繪 SVG 外層區塊 */
+    .icon-box-custom {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 25px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+    }
+
+    /* 控制手繪 SVG 圖標的大小、原本焦糖咖啡色，以及流暢漸變效果 */
+    .icon-box-custom svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: #7a4f2d;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* 卡片標題文字原本顏色 */
+    .title-custom {
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: #403527;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    /* 幫標題下方加一條隱藏的小襯線，點過去才顯示 */
+    .title-custom::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background-color: #4a2f1b;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      transition: width 0.3s ease;
+    }
+
+    /* 卡片內文敘述原本顏色 */
+    .description-custom {
+      font-size: 1.05rem;
+      color: #6e5f4c;
+      line-height: 1.7;
+      margin-top: 10px;
+      transition: color 0.3s ease;
+    }
+
+    /* ========================================================
+       加強版：滑鼠點過去/移入的變色與動畫反饋效果 (:hover)
+       ======================================================== */
+    
+    /* 1. 圖標動態：移入時圖標放大 1.15 倍，且帶有微幅旋轉，顏色加深 */
+    .service-item-custom:hover .icon-box-custom svg {
+      stroke: #4a2f1b;
+      transform: scale(1.15) rotate(3deg);
+    }
+
+    /* 2. 標題動態：字體顏色加深、文字稍微加粗 */
+    .service-item-custom:hover .title-custom {
+      color: #4a2f1b;
+      font-weight: 700 !important;
+    }
+
+    /* 3. 標題下劃線動態：移入時展開下方小圓潤襯線 */
+    .service-item-custom:hover .title-custom::after {
+      width: 40px;
+    }
+
+    /* 4. 內文動態：字色加深提升閱讀對比 */
+    .service-item-custom:hover .description-custom {
+      color: #382414;
+    }
+  </style>
 </head>
 
 <body class="services-page">
@@ -42,39 +171,24 @@
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <h1 class="sitename">WINNIE</h1>
+        <h1 class="sitename">@kaiizhui</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">首頁</a></li>
-          <li><a href="about.html">介紹</a></li>
-          <li><a href="resume.html">簡歷</a></li>
-          <li><a href="services.html">技能</a></li>
-          <li class="dropdown"><a href="#"><span>作品</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="about.html">基本資料</a></li>
+          <li><a href="resume.html">個人簡歷</a></li>
+          <li><a href="services.html" class="active">日常興趣</a></li>
+          <li><a href="portfolio.html">插畫作品</a></li>
+          <li><a href="contact.html">聯絡方式</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
       <div class="header-social-links">
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/chen.kai.zhu.116909/" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/kaiizhui?igsh=eDg5NGU0c2s5ZWht" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
       </div>
 
     </div>
@@ -82,111 +196,120 @@
 
   <main class="main">
 
-    <!-- Services Section -->
-    <section id="services" class="services section">
+    <!-- Services Section (暖黃底色大背景) -->
+    <section id="services" class="services section" style="background-color: #fceecb; padding: 75px 0; min-height: 85vh;">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      <div class="container section-title" data-aos="fade-up" style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-weight: 600; color: #403527; letter-spacing: 2px; margin-bottom: 18px; font-size: 2.5rem;">日常興趣</h2>
+        <p style="color: #6e5f4c; font-size: 1.15rem; font-weight: 500;">生活中不可或缺的六大元素</p>
       </div><!-- End Section Title -->
 
       <div class="container">
 
-        <div class="row gy-4">
+        <div class="row gy-4 align-items-stretch">
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item item-cyan position-relative">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
+          <!-- 元素 1：閱讀 (翻開的書本 SVG) -->
+          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item-custom text-center w-100">
+              <div class="icon-box-custom">
+                <svg viewBox="0 0 24 24">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
                 </svg>
-                <i class="bi bi-activity"></i>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Nesciunt Mete</h3>
-              </a>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+              <div>
+                <h3 class="title-custom">閱讀</h3>
+              </div>
+              <p class="description-custom">偏好散文作品，喜歡時間從文字流逝的感覺。</p>
             </div>
-          </div><!-- End Service Item -->
+          </div><!-- End Element Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item item-orange position-relative">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"></path>
+          <!-- 元素 2：動漫 (手繪螢幕與多功能控制鍵 SVG) -->
+          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item-custom text-center w-100">
+              <div class="icon-box-custom">
+                <svg viewBox="0 0 24 24">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                  <path d="M6 8l3 2-3 2z"></path>
+                  <circle cx="15" cy="10" r="1"></circle>
+                  <circle cx="17.5" cy="10" r="1"></circle>
                 </svg>
-                <i class="bi bi-broadcast"></i>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Eosle Commodi</h3>
-              </a>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+              <div>
+                <h3 class="title-custom">動漫</h3>
+              </div>
+              <p class="description-custom">什麼類型都看，最喜歡的動漫是排球少年。</p>
             </div>
-          </div><!-- End Service Item -->
+          </div><!-- End Element Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-teal position-relative">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781"></path>
+          <!-- 元素 3：音樂 (律動雙音符 SVG) -->
+          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item-custom text-center w-100">
+              <div class="icon-box-custom">
+                <svg viewBox="0 0 24 24">
+                  <path d="M9 18V5l12-2v13"></path>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <circle cx="18" cy="16" r="3"></circle>
                 </svg>
-                <i class="bi bi-easel"></i>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Ledo Markt</h3>
-              </a>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+              <div>
+                <h3 class="title-custom">音樂</h3>
+              </div>
+              <p class="description-custom">耳朵停不下來的人，活著不能沒有音樂！</p>
             </div>
-          </div><!-- End Service Item -->
+          </div><!-- End Element Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item item-red position-relative">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,503.46388370962813C374.79870501325706,506.71871716319447,464.8034551963731,527.1746412648533,510.4981551193396,467.86667711651364C555.9287308511215,408.9015244558933,512.6030010748507,327.5744911775523,490.211057578863,256.5855673507754C471.097692560561,195.9906835881958,447.69079081568157,138.11976852964426,395.19560036434837,102.3242989838813C329.3053358748298,57.3949838291264,248.02791733380457,8.279543830951368,175.87071277845988,42.242879143198664C103.41431057327972,76.34704239035025,93.79494320519305,170.9812938413882,81.28167332365135,250.07896920659033C70.17666984294237,320.27484674793965,64.84698225790005,396.69656628748305,111.28512138212992,450.4950937839243C156.20124167950087,502.5303643271138,231.32542653798444,500.4755392045468,300,503.46388370962813"></path>
+          <!-- 元素 4：哈利波特 (閃電與神祕星芒 SVG，加快出場延遲至 150ms) -->
+          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="150">
+            <div class="service-item-custom text-center w-100">
+              <div class="icon-box-custom">
+                <svg viewBox="0 0 24 24">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                  <path d="M19 3l.5 1 .5-1-.5-1zM4 20l.5 1 .5-1-.5-1z"></path>
                 </svg>
-                <i class="bi bi-bounding-box-circles"></i>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Asperiores Commodit</h3>
-              </a>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-              <a href="#" class="stretched-link"></a>
+              <div>
+                <h3 class="title-custom">哈利波特</h3>
+              </div>
+              <p class="description-custom">超級小說黨，從小到大反覆看了至少五遍。</p>
             </div>
-          </div><!-- End Service Item -->
+          </div><!-- End Element Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item item-indigo position-relative">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,532.3542879108572C369.38199826031484,532.3153073249985,429.10787420159085,491.63046689027357,474.5244479745417,439.17860296908856C522.8885846962883,383.3225815378663,569.1668002868075,314.3205725914397,550.7432151929288,242.7694973846089C532.6665558377875,172.5657663291529,456.2379748765914,142.6223662098291,390.3689995646985,112.34683881706744C326.66090330228417,83.06452184765237,258.84405631176094,53.51806209861945,193.32584062364296,78.48882559362697C121.61183558270385,105.82097193414197,62.805066853699245,167.19869350419734,48.57481801355237,242.6138429142374C34.843463184063346,315.3850353017275,76.69343916112496,383.4422959591041,125.22947124332185,439.3748458443577C170.7312796277747,491.8107796887764,230.57421082200815,532.3932930995766,300,532.3542879108572"></path>
+          <!-- 元素 5：Vlog (手繪生活紀錄攝影機 SVG，加快出場延遲至 200ms) -->
+          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item-custom text-center w-100">
+              <div class="icon-box-custom">
+                <svg viewBox="0 0 24 24">
+                  <path d="M23 7l-7 5 7 5V7z"></path>
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                  <circle cx="6" cy="12" r="2"></circle>
                 </svg>
-                <i class="bi bi-calendar4-week icon"></i>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Velit Doloremque</h3>
-              </a>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
-              <a href="#" class="stretched-link"></a>
+              <div>
+                <h3 class="title-custom">Vlog</h3>
+              </div>
+              <p class="description-custom">喜歡看別人（尤其是漂亮女生）的生活日常。</p>
             </div>
-          </div><!-- End Service Item -->
+          </div><!-- End Element Item -->
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item item-pink position-relative">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,566.797414625762C385.7384707136149,576.1784315230908,478.7894351017131,552.8928747891023,531.9192734346935,484.94944893311C584.6109503024035,417.5663521118492,582.489472248146,322.67544863468447,553.9536738515405,242.03673114598146C529.1557734026468,171.96086150256528,465.24506316201064,127.66468636344209,395.9583748389544,100.7403814666027C334.2173773831606,76.7482773500951,269.4350130405921,84.62216499799875,207.1952322260088,107.2889140133804C132.92018162631612,134.33871894543012,41.79353780512637,160.00259165414826,22.644507872594943,236.69541883565114C3.319112789854554,314.0945973066697,72.72355303640163,379.243833228382,124.04198916343866,440.3218312028393C172.9286146004772,498.5055451809895,224.45579914871206,558.5317968840102,300,566.797414625762"></path>
+          <!-- 元素 6：睡覺 (手繪彎月睡眠符號 SVG，加快出場延遲至 250ms) -->
+          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="250">
+            <div class="service-item-custom text-center w-100">
+              <div class="icon-box-custom">
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                  <path d="M11 7h2M12 7v2M15 10h1.5M7 13h1"></path>
                 </svg>
-                <i class="bi bi-chat-square-text"></i>
               </div>
-              <a href="#" class="stretched-link">
-                <h3>Dolori Architecto</h3>
-              </a>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
-              <a href="#" class="stretched-link"></a>
+              <div>
+                <h3 class="title-custom">睡覺</h3>
+              </div>
+              <p class="description-custom">可以一次睡超過15小時。</p>
             </div>
-          </div><!-- End Service Item -->
+          </div><!-- End Element Item -->
 
         </div>
 
@@ -196,31 +319,25 @@
 
   </main>
 
-   <footer id="footer" class="footer light-background">
-
+  <footer id="footer" class="footer light-background" style="background-color: #fceecb; border-top: 1px solid rgba(122, 79, 45, 0.1);">
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Winnie</strong> <span>All Rights Reserved<br></span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">@kaiizhui</strong> <span>All Rights Reserved<br></span></p>
       </div>
       <div class="credits">
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
       </div>
     </div>
-
   </footer>
+
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short" style="color: white;"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
