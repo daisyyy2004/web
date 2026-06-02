@@ -4,77 +4,217 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>About - Kelly Bootstrap Template</title>
+  <title>基本資料</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-jianshe-openhunyuan@1.0.0/css/font-jianshe-openhunyuan.min.css">
+
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Kelly
-  * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    /* 全網頁所有標題、內文、標籤與按鈕一律套用超可愛的「粉圓體」 */
+    body, h1, h2, h3, h4, h5, h6, p, span, a, input, textarea, button, .sitename, .navmenu a, .skill, .val, .purecounter {
+      font-family: 'jf-openhunyuan', "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif !important;
+    }
+
+    /* 上方導覽列字體與顏色完全同步首頁 */
+    .navmenu a, .navmenu a:focus {
+      color: #54493b !important;
+      font-weight: 600 !important;
+      position: relative;
+    }
+
+    /* 當前分頁與滑鼠移過去的顏色 */
+    .navmenu a:hover, .navmenu .active, .navmenu .active:focus {
+      color: #7a4f2d !important;
+    }
+
+    /* 修正：利用 left: 50% 和 transform 確保橫槓精準顯示在文字正下方中央 */
+    .navmenu a:before {
+      content: "";
+      position: absolute;
+      background-color: #7a4f2d !important; 
+      height: 4px !important; 
+      width: 60% !important; 
+      border-radius: 50px !important; 
+      bottom: -6px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+    }
+
+    /* 右上角社群連結改為咖啡色 */
+    .header-social-links a {
+      color: #7a4f2d !important;
+    }
+
+    /* 修正：徹底去除粗糙死白的方框包裝，改為精緻乾淨的日雜無邊框風格 */
+    .about-photo-wrap {
+      background: transparent !important; 
+      border-radius: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+      overflow: hidden;
+      padding: 0 !important;
+    }
+
+    /* 修正：去除右側資料的白底方框，直接以高質感留白呈現 */
+    .about-content-card {
+      background: transparent !important; 
+      padding: 20px 10px 20px 30px !important; 
+      border-radius: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    /* 基本資料清單字體放大 */
+    .about .content ul li {
+      margin-bottom: 18px;
+      font-size: 1.15rem; 
+      color: #6e5f4c;
+    }
+
+    .about .content ul i {
+      color: #7a4f2d !important; 
+      font-size: 1.2rem;
+    }
+
+    /* 進度條圓潤化 */
+    .skills .progress {
+      height: 20px; 
+      border-radius: 50px;
+      background-color: #fff6e0;
+      border: 1px solid #f2e2c4;
+      margin-bottom: 25px;
+      overflow: visible;
+    }
+
+    .skills .progress-bar {
+      background-color: #7a4f2d !important; 
+      border-radius: 50px;
+    }
+
+    .skills .skill {
+      padding: 0;
+      margin: 0 0 10px 0;
+      text-transform: uppercase;
+      display: block;
+      font-weight: 600;
+      color: #403527;
+      font-size: 1.05rem;
+    }
+
+    /* 修正：將學分數據方塊改為透明背景、無邊框與無陰影 */
+    .stats .stats-item {
+      background: transparent !important;
+      padding: 30px 15px !important;
+      border-radius: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .stats .stats-item .purecounter {
+      color: #7a4f2d !important;
+      font-weight: 700 !important;
+      font-size: 3.2rem; 
+      display: block;
+      line-height: 1.2;
+    }
+
+    .stats .stats-item p {
+      color: #6e5f4c !important;
+      font-size: 1.2rem !important; 
+      margin-top: 12px !important;
+      font-weight: 600;
+    }
+
+    /* 拿掉最下面熊熊與動物夥伴評價的白框與陰影，改為完全透明背景 */
+    .testimonials .testimonial-item {
+      background: transparent !important; 
+      padding: 10px 20px !important;
+      border-radius: 0 !important;
+      border: none !important; 
+      box-shadow: none !important; 
+    }
+
+    /* 修正：將圓形動物頭像進一步放大至 190px */
+    .testimonials .testimonial-item .testimonial-img {
+      width: 190px !important;
+      height: 190px !important;
+      border: 5px solid #ffffff !important; 
+      box-shadow: 0 6px 15px rgba(84, 73, 59, 0.12);
+      margin-bottom: 15px;
+    }
+
+    .testimonials .testimonial-item h3 {
+      color: #403527 !important;
+      font-size: 1.4rem !important;
+      margin-top: 10px;
+    }
+
+    .testimonials .testimonial-item h4 {
+      color: #a67c52 !important;
+      font-size: 1rem !important;
+    }
+
+    .testimonials .testimonial-item .stars i {
+      color: #f2be5c !important; 
+    }
+
+    .testimonials .testimonial-item p {
+      color: #54493b !important;
+      font-size: 1.15rem !important;
+    }
+
+    .testimonials .testimonial-item .quote-icon-left,
+    .testimonials .testimonial-item .quote-icon-right {
+      color: #e6dba8 !important; 
+    }
+
+    .testimonials .swiper-pagination .swiper-pagination-bullet-active {
+      background-color: #7a4f2d !important;
+    }
+    
+  </style>
 </head>
 
 <body class="about-page">
 
-   <header id="header" class="header d-flex align-items-center light-background sticky-top">
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <h1 class="sitename">WINNIE</h1>
+        <h1 class="sitename">@kaiizhui</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">首頁</a></li>
-          <li><a href="about.html">介紹</a></li>
-          <li><a href="resume.html">簡歷</a></li>
-          <li><a href="services.html">技能</a></li>
-          <li class="dropdown"><a href="#"><span>作品</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="about.html" class="active">基本資料</a></li>
+          <li><a href="resume.html">個人簡歷</a></li>
+          <li><a href="services.html">日常興趣</a></li>
+          <li><a href="portfolio.html">插畫作品</a></li>
+          <li><a href="contact.html">聯絡方式</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
       <div class="header-social-links">
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/chen.kai.zhu.116909/" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/kaiizhui?igsh=eDg5NGU0c2s5ZWht" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
       </div>
 
     </div>
@@ -82,183 +222,147 @@
 
   <main class="main">
 
-    <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about section" style="background-color: #fceecb; padding: 75px 0;">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 content">
-            <h2>UI/UX Designer &amp; Web Developer.</h2>
-            <p class="fst-italic py-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 May 1995</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+123 456 7890</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>New York, USA</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>email@example.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
-            </div>
-            <p class="py-3">
-              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
-            </p>
-          </div>
-        </div>
-
+      <div class="container section-title" data-aos="fade-up" style="text-align: center; margin-bottom: 50px;">
+        <h2 style="font-weight: 600; color: #403527; letter-spacing: 2px; margin-bottom: 15px; font-size: 2.5rem;">關於我</h2>
+        <p style="color: #6e5f4c; font-size: 1.15rem; font-weight: 500;"></p>
       </div>
 
-    </section><!-- /About Section -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center align-items-stretch">
+          <div class="col-lg-4 d-flex">
+            <div class="w-100 d-flex align-items-center justify-content-center about-photo-wrap">
+              <img src="assets/img/profile-img.webp" class="img-fluid" alt="Profile" style="border-radius: 16px; object-fit: cover; width: 100%; height: 100%; min-height: 350px;">
+            </div>
+          </div>
+          
+          <div class="col-lg-8 d-flex">
+            <div class="about-content-card content w-100 d-flex flex-column justify-content-between">
+              <div>
+                <h2 style="color: #403527; font-weight: 600; font-size: 2rem; margin-bottom: 18px;">哈囉🐾</h2>
+                <p style="color: #6e5f4c; font-size: 1.15rem; line-height: 1.8; margin-bottom: 30px;">
+                  記錄學習與生活日常。期望能透過這個網站，展現人文思維與數位實作結合的更多可能。
+                </p>
+              </div>
+              
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li><i class="bi bi-chevron-right"></i> <strong>生日：</strong> <span>2004 年 12 月 10 日</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>居住地：</strong> <span>臺灣．高雄</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>聯絡電話：</strong> <span>0985-955-788</span></li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li><i class="bi bi-chevron-right"></i> <strong>年齡：</strong> <span>21 歲</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>就讀學校：</strong> <span>國立中興大學</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>電子郵件：</strong> <span>daisyyy931210@gmail.com</span></li>
+                  </ul>
+                </div>
+              </div>
+              
+              <p style="color: #7a4f2d; font-weight: 600; font-size: 1.2rem; margin-top: 25px; border-left: 4px solid #f2be5c; padding-left: 15px; line-height: 1.5;">
+                目前最想做的事：放暑假。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
+    </section>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+    <section id="skills" class="skills section" style="background-color: #fceecb; padding: 40px 0;">
+
+      <div class="container section-title" data-aos="fade-up" style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-weight: 600; color: #403527; font-size: 2rem;">專業能力</h2>
+        <p style="color: #6e5f4c; font-size: 1.05rem;"></p>
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row skills-content skills-animation">
-
           <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
+            <div class="progress-container" style="margin-bottom: 20px;">
+              <span class="skill"><span>文獻分析（文組的基本修養）</span> <i class="val" style="float: right; font-style: normal; color: #7a4f2d;">90%</i></span>
+              <div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%"></div></div>
+            </div>
+            <div class="progress-container" style="margin-bottom: 20px;">
+              <span class="skill"><span>批判思考（客觀思辨與邏輯分析）</span> <i class="val" style="float: right; font-style: normal; color: #7a4f2d;">90%</i></span>
+              <div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%"></div></div>
+            </div>
+            <div class="progress-container" style="margin-bottom: 20px;">
+              <span class="skill"><span>目標執行（將構想轉化為具體成果）</span> <i class="val" style="float: right; font-style: normal; color: #7a4f2d;">85%</i></span>
+              <div class="progress"><div class="progress-bar" role="progressbar" style="width: 85%"></div></div>
+            </div>
           </div>
 
           <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>PHP</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>WordPress/CMS</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Photoshop</span> <i class="val">55%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
+            <div class="progress-container" style="margin-bottom: 20px;">
+              <span class="skill"><span>溝通協調（理性的觀點表達）</span> <i class="val" style="float: right; font-style: normal; color: #7a4f2d;">80%</i></span>
+              <div class="progress"><div class="progress-bar" role="progressbar" style="width: 80%"></div></div>
+            </div>
+            <div class="progress-container" style="margin-bottom: 20px;">
+              <span class="skill"><span>數位人文（運用資訊工具探索歷史）</span> <i class="val" style="font-style: normal; float: right; color: #7a4f2d;">90%</i></span>
+              <div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%"></div></div>
+            </div>
+            <div class="progress-container" style="margin-bottom: 20px;">
+              <span class="skill"><span>時間管理（規律的生活作息）</span> <i class="val" style="float: right; font-style: normal; color: #7a4f2d;">95%</i></span>
+              <div class="progress"><div class="progress-bar" role="progressbar" style="width: 95%"></div></div>
+            </div>
           </div>
-
         </div>
-
       </div>
 
-    </section><!-- /Skills Section -->
+    </section>
 
-    <!-- Stats Section -->
-    <section id="stats" class="stats section">
+    <section id="stats" class="stats section" style="background-color: #fceecb; padding: 50px 0;">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Facts</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+      <div class="container section-title" data-aos="fade-up" style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-weight: 600; color: #403527; font-size: 2rem;">學分計算</h2>
+        <p style="color: #6e5f4c; font-size: 1.05rem;">目前為止累積修畢的總學分數，穩定達成各階段的課業要求，為時間管理與學業執行力的客觀指標。</p>
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4">
-
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Clients</p>
+              <span data-purecounter-start="0" data-purecounter-end="23" data-purecounter-duration="1" class="purecounter"></span>
+              <p>必修學分</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Projects</p>
+              <span data-purecounter-start="0" data-purecounter-end="38" data-purecounter-duration="1" class="purecounter"></span>
+              <p>選修學分</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hours Of Support</p>
+              <span data-purecounter-start="0" data-purecounter-end="33" data-purecounter-duration="1" class="purecounter"></span>
+              <p>通識學分</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
           <div class="col-lg-3 col-md-6">
             <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Workers</p>
+              <span data-purecounter-start="0" data-purecounter-end="27" data-purecounter-duration="1" class="purecounter"></span>
+              <p>外系學分</p>
             </div>
-          </div><!-- End Stats Item -->
-
+          </div>
         </div>
-
       </div>
 
-    </section><!-- /Stats Section -->
+    </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
+    <!-- 修正：調近標題與頭像距離，並放大頭像尺寸 -->
+    <section id="testimonials" class="testimonials section" style="background-color: #fceecb; padding: 60px 0;">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+      <div class="container section-title" data-aos="fade-up" style="text-align: center; margin-bottom: 15px;">
+        <h2 style="font-weight: 600; color: #403527; font-size: 2rem;">評價</h2>
+        <p style="color: #6e5f4c; font-size: 1.05rem;">來自熊熊王國的評價</p>
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="swiper init-swiper">
           <script type="application/json" class="swiper-config">
             {
@@ -278,120 +382,109 @@
           <div class="swiper-wrapper">
 
             <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
+              <div class="testimonial-item text-center">
+                <img src="assets/img/testimonials/testimonials-1.webp" class="testimonial-img" alt="">
+                <h3>大維尼</h3>
+                <h4>熊熊大總理</h4>
+                <div class="stars" style="margin-bottom: 15px;">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
-                <p>
+                <p style="max-width: 800px; margin: 0 auto; line-height: 1.7;">
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+                  <span>情緒穩定，遇到突發狀況或高壓期也不會崩潰，會冷靜地把事情一件件處理好。</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <div class="stars">
+              <div class="testimonial-item text-center">
+                <img src="assets/img/testimonials/testimonials-2.webp" class="testimonial-img" alt="">
+                <h3>小維尼</h3>
+                <h4>白色閃電</h4>
+                <div class="stars" style="margin-bottom: 15px;">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
-                <p>
+                <p style="max-width: 800px; margin: 0 auto; line-height: 1.7;">
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+                  <span>很親切，溝通順暢，雖然偶爾暴躁但日常好相處的夥伴。</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
-              <div class="testimonial-item">
+              <div class="testimonial-item text-center">
                 <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <div class="stars">
+                <h3>ㄅㄧㄚㄅㄧㄚ</h3>
+                <h4>飛天大象</h4>
+                <div class="stars" style="margin-bottom: 15px;">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
-                <p>
+                <p style="max-width: 800px; margin: 0 auto; line-height: 1.7;">
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+                  <span>具備良好的時間管理與執行力，是可靠的夥伴。</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
-              <div class="testimonial-item">
+              <div class="testimonial-item text-center">
                 <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <div class="stars">
+                <h3>皮皮</h3>
+                <h4>極速神犬</h4>
+                <div class="stars" style="margin-bottom: 15px;">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
-                <p>
+                <p style="max-width: 800px; margin: 0 auto; line-height: 1.7;">
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
+                  <span>做事有自己的原則，很清楚自己每個階段要的是什麼。</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
-              <div class="testimonial-item">
+              <div class="testimonial-item text-center">
                 <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <div class="stars">
+                <h3>阿吉</h3>
+                <h4>微生物學家</h4>
+                <div class="stars" style="margin-bottom: 15px;">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
-                <p>
+                <p style="max-width: 800px; margin: 0 auto; line-height: 1.7;">
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
+                  <span>觀察力敏銳，對生活和學業上的細節都很講究，能注意到別人容易忽略的小地方。</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
           </div>
           <div class="swiper-pagination"></div>
         </div>
-
       </div>
 
-    </section><!-- /Testimonials Section -->
-
+    </section>
   </main>
 
-   <footer id="footer" class="footer light-background">
-
+  <footer id="footer" class="footer light-background" style="background-color: #fceecb; border-top: 1px solid rgba(122, 79, 45, 0.1);">
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Winnie</strong> <span>All Rights Reserved<br></span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">@kaiizhui</strong> <span>All Rights Reserved<br></span></p>
       </div>
       <div class="credits">
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
       </div>
     </div>
-
   </footer>
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" style="background-color: #7a4f2d;"><i class="bi bi-arrow-up-short" style="color: white;"></i></a>
+
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -400,7 +493,6 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>

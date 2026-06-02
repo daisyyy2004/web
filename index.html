@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Winnie的網頁</title>
+  <title>kaiizhui</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -15,6 +15,8 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-jianshe-openhunyuan@1.0.0/css/font-jianshe-openhunyuan.min.css">
+
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -23,7 +25,54 @@
 
   <link href="assets/css/main.css" rel="stylesheet">
 
-  </head>
+  <style>
+    /* 全網頁套用粉圓體 */
+    body, h1, h2, h3, h4, h5, h6, p, span, a, input, textarea, button, .sitename, .navmenu a {
+      font-family: 'jf-openhunyuan', "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif !important;
+    }
+
+    /* 導覽列文字改為深咖啡色 */
+    .navmenu a, .navmenu a:focus {
+      color: #54493b !important;
+      font-weight: 600 !important;
+      position: relative;
+    }
+
+    /* 當前分頁與滑鼠移過去的顏色 */
+    .navmenu a:hover, .navmenu .active, .navmenu .active:focus {
+      color: #7a4f2d !important;
+    }
+
+    /* 橫槓精準靠中在文字正下方 */
+    .navmenu a:before {
+      content: "";
+      position: absolute;
+      background-color: #7a4f2d !important; 
+      height: 4px !important; 
+      width: 60% !important; 
+      border-radius: 50px !important; 
+      bottom: -6px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+    }
+
+    /* 右上角社群連結改為咖啡色 */
+    .header-social-links a {
+      color: #7a4f2d !important;
+    }
+
+    /* 原本封面按鈕改色 */
+    .hero .btn-get-started {
+      background-color: #7a4f2d !important;
+      color: #ffffff !important;
+      border: none !important;
+    }
+    
+    .hero .btn-get-started:hover {
+      background-color: #633f24 !important;
+    }
+  </style>
+</head>
 
 <body class="index-page">
 
@@ -31,39 +80,24 @@
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <h1 class="sitename">WINNIE</h1>
+        <h1 class="sitename">@kaiizhui</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html" class="active">首頁</a></li>
-          <li><a href="about.html">介紹</a></li>
-          <li><a href="resume.html">簡歷</a></li>
-          <li><a href="services.html">技能</a></li>
-          <li class="dropdown"><a href="#"><span>作品</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
+          <li><a href="about.html">基本資料</a></li>
+          <li><a href="resume.html">個人簡歷</a></li>
+          <li><a href="services.html">日常興趣</a></li>
+          <li><a href="portfolio.html">插畫作品</a></li>
+          <li><a href="contact.html">聯絡方式</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
       <div class="header-social-links">
-        <a href="https://www.facebook.com/?locale=zh_TW" class="facebook" target="_blank"><i class="bi bi-facebook" ></i></a>
-        <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/chen.kai.zhu.116909/" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/kaiizhui?igsh=eDg5NGU0c2s5ZWht" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
       </div>
 
     </div>
@@ -71,31 +105,32 @@
 
   <main class="main">
 
-    <section id="hero" class="hero section">
+    <section id="hero" class="hero section" style="position: relative;">
 
-      <img src="assets/img/hero-bg.webp" alt="Winnie 的背景圖" data-aos="fade-in">
+      <img src="assets/img/hero-bg.jpg" alt="@kaiizhui 的背景圖" data-aos="fade-in">
 
-      <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
+      <div class="container text-center" data-aos="zoom-out" data-aos-delay="100" style="position: relative; z-index: 2;">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <h2 style="color:#3b3434;">Winnie Chen的網頁</h2>
-            <p style="color:#3b3434;">中興大學歷史學系三年級</p>
+            <h2 style="color: #7a4f2d;">陳楷筑</h2>
+            <p style="color: #54493b;">中興大學 x 網頁設計</p>
             <a href="about.html" class="btn-get-started">About Me</a>
           </div>
         </div>
       </div>
 
-    </section></main>
+    </section>
+  </main>
 
   <footer id="footer" class="footer light-background">
 
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Winnie</strong> <span>All Rights Reserved<br></span></p>
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">@kaiizhui</strong> <span>All Rights Reserved<br></span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/chen.kai.zhu.116909/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/kaiizhui?igsh=eDg5NGU0c2s5ZWht" target="_blank"><i class="bi bi-instagram"></i></a>
       </div>
       <div class="credits">
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
@@ -104,7 +139,7 @@
 
   </footer>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" style="background-color: #7a4f2d;"><i class="bi bi-arrow-up-short" style="color: white;"></i></a>
 
   <div id="preloader"></div>
 

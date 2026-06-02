@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Contact - Kelly Bootstrap Template</title>
+  <title>聯絡方式</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -17,6 +17,9 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+  <!-- 引進開源「jf open 粉圓體」連結 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-jianshe-openhunyuan@1.0.0/css/font-jianshe-openhunyuan.min.css">
+
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -27,54 +30,142 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Kelly
-  * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- 客製化設計、防跑位與柔和配色 CSS -->
+  <style>
+    /* 全網頁標題、內文一律套用「粉圓體」 */
+    body, h1, h2, h3, h4, h5, h6, p, span, a, input, textarea, button, .sitename, .navmenu a, .form-control-custom, .sent-message {
+      font-family: 'jf-openhunyuan', "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif !important;
+    }
+
+    /* 上方導覽列字體與顏色同步 */
+    .navmenu a, .navmenu a:focus {
+      color: #54493b !important;
+      font-weight: 600 !important;
+      position: relative;
+    }
+
+    .navmenu a:hover, .navmenu .active, .navmenu .active:focus {
+      color: #7a4f2d !important;
+    }
+
+    /* 導覽列圓潤底線膠囊精準置中 */
+    .navmenu a:before {
+      content: "";
+      position: absolute;
+      background-color: #7a4f2d !important; 
+      height: 4px !important; 
+      width: 60% !important; 
+      border-radius: 50px !important; 
+      bottom: -6px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+    }
+
+    .header-social-links a {
+      color: #7a4f2d !important;
+    }
+
+    /* 終極防跑位方案：聯絡項目外層容器改為相對定位，並留出左邊距 */
+    .info-item-custom {
+      position: relative !important;
+      padding-left: 64px !important; 
+      margin-bottom: 35px;
+      display: block !important;
+      width: 100%;
+    }
+
+    /* 絕不跑位的小圓圈 */
+    .icon-box-custom {
+      position: absolute !important;
+      left: 0 !important;
+      top: 4px !important;
+      width: 46px !important;
+      height: 46px !important;
+      background-color: #fff6e0;
+      border-radius: 50% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border: 2px solid #fce8bd;
+    }
+
+    /* 修正刺眼純白：輸入框換成溫潤的薄奶油色 */
+    .form-control-custom {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 1.1rem;
+      font-size: 0.95rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #54493b;
+      background-color: #fffdf9; 
+      border: 2px solid #ece0c8; 
+      border-radius: 16px;
+      transition: all .2s ease-in-out;
+    }
+    
+    .form-control-custom:focus {
+      color: #403527;
+      background-color: #ffffff;
+      border-color: #f2be5c;
+      outline: 0;
+      box-shadow: 0 0 0 0.25rem rgba(242, 190, 92, 0.3);
+    }
+
+    /* 焦糖咖啡色膠囊按鈕 */
+    .btn-submit-custom {
+      background-color: #7a4f2d; 
+      color: #ffffff;
+      border: none;
+      padding: 13px 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-radius: 50px; 
+      cursor: pointer;
+      display: inline-block;
+      box-shadow: 0 6px 14px rgba(122, 79, 45, 0.2); 
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    }
+
+    .btn-submit-custom:hover {
+      background-color: #633f24; 
+      color: #ffffff;
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 8px 18px rgba(122, 79, 45, 0.3);
+    }
+    
+    .btn-submit-custom:active {
+      transform: translateY(1px) scale(0.98); 
+    }
+  </style>
 </head>
 
 <body class="contact-page">
 
-   <header id="header" class="header d-flex align-items-center light-background sticky-top">
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <h1 class="sitename">WINNIE</h1>
+        <h1 class="sitename">@kaiizhui</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">首頁</a></li>
-          <li><a href="about.html">介紹</a></li>
-          <li><a href="resume.html">簡歷</a></li>
-          <li><a href="services.html">技能</a></li>
-          <li class="dropdown"><a href="#"><span>作品</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="about.html">基本資料</a></li>
+          <li><a href="resume.html">個人簡歷</a></li>
+          <li><a href="services.html">日常興趣</a></li>
+          <li><a href="portfolio.html">插畫作品</a></li>
+          <li><a href="contact.html" class="active">聯絡方式</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
+
       <div class="header-social-links">
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.facebook.com/chen.kai.zhu.116909/" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/kaiizhui?igsh=eDg5NGU0c2s5ZWht" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
       </div>
 
     </div>
@@ -82,80 +173,94 @@
 
   <main class="main">
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <!-- Contact Section (溫暖舒服的暖布丁黃色背景) -->
+    <section id="contact" class="contact section" style="background-color: #fceecb; color: #54493b; padding: 70px 0; min-height: 86vh;">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      <div class="container section-title" data-aos="fade-up" style="text-align: center; margin-bottom: 50px;">
+        <h2 style="font-weight: 600; color: #403527; letter-spacing: 2px; margin-bottom: 15px; font-size: 2.5rem;">聯絡我</h2>
+        <p style="color: #6e5f4c; font-size: 1.15rem; font-weight: 500;">如果有任何問題或想聊聊，歡迎隨時留言給我喔！</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4">
+        <div class="row gy-5 align-items-stretch">
 
-          <div class="col-lg-5">
-
-            <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
+          <!-- 左側資訊欄：柔和微透的淡米色卡片 -->
+          <div class="col-lg-5 d-flex">
+            <div class="info-wrap d-flex flex-column h-100 w-100" style="background: rgba(250, 244, 232, 0.65); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); padding: 40px 30px; border-radius: 28px; border: 2px solid rgba(122, 79, 45, 0.12); box-shadow: 0 10px 30px rgba(122, 79, 45, 0.03);">
+              
+              <div class="info-item-custom" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box-custom">
+                  <i class="bi bi-geo-alt" style="font-size: 19px; color: #d99114;"></i>
+                </div>
                 <div>
-                  <h3>Address</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <h3 style="font-size: 1.15rem; font-weight: 600; color: #403527; margin-bottom: 4px;">聯絡地址</h3>
+                  <p style="color: #6b5c4a; font-size: 1rem; margin: 0; line-height: 1.4;">霍格華茲</p>
                 </div>
               </div><!-- End Info Item -->
 
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
+              <div class="info-item-custom" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box-custom">
+                  <i class="bi bi-telephone" style="font-size: 19px; color: #d99114;"></i>
+                </div>
                 <div>
-                  <h3>Call Us</h3>
-                  <p>+1 5589 55488 55</p>
+                  <h3 style="font-size: 1.15rem; font-weight: 600; color: #403527; margin-bottom: 4px;">聯絡電話</h3>
+                  <p style="color: #6b5c4a; font-size: 1rem; margin: 0; line-height: 1.4;">0985-955-788</p>
                 </div>
               </div><!-- End Info Item -->
 
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
+              <div class="info-item-custom" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box-custom">
+                  <i class="bi bi-envelope" style="font-size: 19px; color: #d99114;"></i>
+                </div>
                 <div>
-                  <h3>Email Us</h3>
-                  <p>info@example.com</p>
+                  <h3 style="font-size: 1.15rem; font-weight: 600; color: #403527; margin-bottom: 4px;">電子郵件</h3>
+                  <p style="color: #6b5c4a; font-size: 1rem; margin: 0; line-height: 1.4; word-break: break-all;">daisyyy931210@gmail.com</p>
                 </div>
               </div><!-- End Info Item -->
 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <!-- 地圖整合：已更換為國立中興大學的官方精準定位 -->
+              <div class="flex-grow-1" style="min-height: 260px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3641.372488819446!2d120.67313727610368!3d24.12355197415444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693cf8c7b8051b%3A0x67ab332ff06757b3!2sNational%20Chung%20Hsing%20University!5e0!3m2!1zhmt!2stw!4v1717000000000!5m2!1zhmt!2stw" 
+                        frameborder="0" style="border:0; width: 100%; height: 100%; border-radius: 20px; filter: sepia(35%) saturate(110%); opacity: 0.9; border: 2px solid rgba(122, 79, 45, 0.12);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
             </div>
           </div>
 
-          <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+          <!-- 右側表單欄：簡約線條設計 -->
+          <div class="col-lg-7 d-flex">
+            <form id="google-contact-form" action="https://script.google.com/macros/s/AKfycbxx3xZdkyrnRMEu1nISrc4--b5gLAoKPSi4YpfMuwwXqbwUir601uBhgPWHMUqzHiWE8A/exec" method="post" data-aos="fade-up" data-aos-delay="200" class="d-flex flex-column h-100 w-100" style="background: transparent; padding: 20px 10px; border-radius: 0;">
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                  <label for="name-field" class="pb-2" style="font-size: 1rem; font-weight: 600; color: #403527; letter-spacing: 0.5px;">您的姓名</label>
+                  <input type="text" name="name" id="name-field" class="form-control-custom" required="">
                 </div>
 
                 <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                  <label for="email-field" class="pb-2" style="font-size: 1rem; font-weight: 600; color: #403527; letter-spacing: 0.5px;">電子郵件</label>
+                  <input type="email" class="form-control-custom" name="email" id="email-field" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                  <label for="subject-field" class="pb-2" style="font-size: 1rem; font-weight: 600; color: #403527; letter-spacing: 0.5px;">郵件主旨</label>
+                  <input type="text" class="form-control-custom" name="subject" id="subject-field" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                  <label for="message-field" class="pb-2" style="font-size: 1rem; font-weight: 600; color: #403527; letter-spacing: 0.5px;">訊息內容</label>
+                  <textarea class="form-control-custom" name="message" rows="7" id="message-field" required=""></textarea>
                 </div>
 
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="col-md-12 text-center" style="margin-top: 35px;">
+                  <div class="loading" style="display: none; color: #54493b; font-size: 1rem; font-weight: 500; margin-bottom: 15px;">飛鴿傳書中...</div>
+                  <div class="error-message" style="display: none; color: #c45252; font-size: 1rem; font-weight: 500; margin-bottom: 15px;"></div>
+                  
+                  <!-- 成功提示文字：溫潤的深焦糖咖啡色 -->
+                  <div class="sent-message" style="display: none; color: #7a4f2d; font-size: 1.15rem; font-weight: 600; margin-bottom: 15px; letter-spacing: 0.5px;">您的訊息已成功送出，謝謝你！</div>
 
-                  <button type="submit">Send Message</button>
+                  <button type="submit" class="btn-submit-custom">傳送訊息</button>
                 </div>
 
               </div>
@@ -170,11 +275,10 @@
 
   </main>
 
-   <footer id="footer" class="footer light-background">
-
+  <footer id="footer" class="footer light-background" style="background-color: #fceecb; border-top: 1px solid rgba(122, 79, 45, 0.15);">
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Winnie</strong> <span>All Rights Reserved<br></span></p>
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">@kaiizhui</strong> <span>All Rights Reserved<br></span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
         <a href=""><i class="bi bi-facebook"></i></a>
@@ -184,17 +288,14 @@
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
       </div>
     </div>
-
   </footer>
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" style="background-color: #7a4f2d;"><i class="bi bi-arrow-up-short" style="color: white;"></i></a>
+
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -205,6 +306,52 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- 表單傳送控制 JavaScript -->
+  <script>
+    document.getElementById('google-contact-form').addEventListener('submit', function(e) {
+      e.preventDefault(); 
+      
+      var form = this;
+      var loading = form.querySelector('.loading');
+      var errorMessage = form.querySelector('.error-message');
+      var sentMessage = form.querySelector('.sent-message');
+      
+      loading.style.display = 'block';
+      errorMessage.style.display = 'none';
+      sentMessage.style.display = 'none';
+      
+      var formData = new FormData(form);
+      var searchParams = new URLSearchParams();
+      for (var pair of formData) {
+        searchParams.append(pair[0], pair[1]);
+      }
+      
+      fetch(form.action, {
+        method: 'POST',
+        body: searchParams,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      })
+      .then(response => response.text())
+      .then(data => {
+        loading.style.display = 'none';
+        if (data.trim() === 'success') { 
+          sentMessage.style.display = 'block'; 
+          form.reset(); 
+        } else {
+          errorMessage.textContent = '傳送失敗，請稍後再試。錯誤原因：' + data;
+          errorMessage.style.display = 'block';
+        }
+      })
+      .catch(error => {
+        loading.style.display = 'none';
+        errorMessage.textContent = '連線錯誤：' + error;
+        errorMessage.style.display = 'block';
+      });
+    });
+  </script>
 
 </body>
 

@@ -90,23 +90,24 @@ h6 {
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
+  display: none !important;
+  visibility: hidden !important; /* 隱藏元素 */
+  opacity: 0 !important;          /* 變成完全透明 */
+  height: 0 !important;           /* 高度歸零 */
+  padding: 0 !important;          /* 內邊距歸零（消滅紅色大區塊） */
+  margin: 0 !important;           /* 外邊距歸零 */
+  border: none !important;        /* 拔掉任何邊框 */
+  font-size: 0 !important;        /* 字體縮小到不見 */
 }
 
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
+.php-email-form .error-message {display: none !important;
+  visibility: hidden !important; /* 隱藏元素 */
+  opacity: 0 !important;          /* 變成完全透明 */
+  height: 0 !important;           /* 高度歸零 */
+  padding: 0 !important;          /* 內邊距歸零（消滅紅色大區塊） */
+  margin: 0 !important;           /* 外邊距歸零 */
+  border: none !important;        /* 拔掉任何邊框 */
+  font-size: 0 !important;        /* 字體縮小到不見 */
 }
 
 .php-email-form .loading {
@@ -1080,7 +1081,7 @@ section,
 }
 
 .services .service-item.item-cyan i {
-  color: #0dcaf0;
+  color: #689199;
 }
 
 .services .service-item.item-cyan:hover .icon i {
@@ -1413,11 +1414,4 @@ section,
 
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
-}
-
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
 }
